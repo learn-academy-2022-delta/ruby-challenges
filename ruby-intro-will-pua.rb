@@ -2,6 +2,10 @@ puts 4%2
 #  => 0 
 puts 6%5
 #  => 1 
+puts 6/0
+# => divided by 0 (ZeroDivisionError)
+puts 0/0
+# divided by 0 (ZeroDivisionError)
 p my_favorite_number = 13
 #  => 13 
 puts my_favorite_number / 2
