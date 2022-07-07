@@ -39,13 +39,35 @@ p sum_these_numbers(1,1)
 
 
 
-
 # Challenge: Password Checker
 # User Stories
 # You are writing the user registration page for a secure web site. On the registration page, the user has to enter a user ID and a password, which has to adhere to the to following criteria:
-
 # As a developer, I can create a method that checks for the following rules for a user ID and password:
+puts 'Please create a username'
+user_name = gets.chomp
+p user_name
+puts 'Please create a password'
+pass_word = gets.chomp
+p pass_word
+
 # User ID and password cannot be the same.
+def pass_user_rules (user_name, pass_word)
+    if user_name != pass_word && user_name.length >= 6 && pass_word.length >= 6 && pass_word.include?('!') && pass_word.include?('#') && pass_word.include?('$')
+        'Looks good'
+    else 
+        'Try again'
+    end
+end
+
+# def pass_user_rules (user_name, pass_word)
+#     if user_name == pass_word || user_name.length < 6 || pass_word.length < 6 || pass_word != pass_word.characters ('!#$')
+#         'Try again'
+#     else 
+#         'Looks good'
+#     end
+# end
+p pass_user_rules(user_name, pass_word)
+
 # User ID and password must be at least six characters long.
 # Password must contain at least one of: !#$
 # User ID cannot contain the following characters: !#$ or spaces
