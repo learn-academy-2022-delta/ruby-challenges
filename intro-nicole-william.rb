@@ -11,17 +11,14 @@
     p 30 % 2
     p 34 % 3
 
-
-
 # 3. Divide a number by 0.
     # p 20 / 0 
 
 # 4. Divide 0 by 0.
     #  p 0 / 0
 
-
-
 # Variables Challenges
+
 # Set a variable called my_favorite_number equal to your favorite number
     p my_favorite_number = 5
 
@@ -47,22 +44,42 @@
 
 # Strings Challenges
 
-
-
 # Create a variable and return it in a sentence string interpolation
-# Create a variable that contains a string and test some of the Ruby string methods
+    p my_name = 'Bill'
+    p "Hello #{my_name}"
+
+# Create a variable that contains a string and test some of the Ruby 
+
+# string methods :
 # .upcase
+    p my_name.upcase
 # .reverse
+    p my_name.reverse
 # .include?
+    p my_name.include?('B')
 # .capitalize
-
-
+    p my_name.capitalize
 
 # Arrays Challenges
+
 # Create an array that contains the name of at least five TV shows
+    p tv_array = ['Spongebob', 'Dexter', 'Quantico', 'Ozark', 'Blindspot']
+
 # Find the length of the array
+    p tv_array.length
+
 # Return the first item in the array
+    p tv_array.first
+
 # Return the fourth item in the array
+    p tv_array[3]
+
 # Permanently reverse the order of the array
+    p tv_array.reverse!
+
 # Create a new empty array for your top favorite TV shows
+    p top_favs = []
+
 # From the full TV show array, add your top two favorite shows to the empty array
+    p top_favs = ['Quantico', 'Dexter']
+    p top_favs
