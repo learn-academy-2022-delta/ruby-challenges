@@ -94,16 +94,21 @@
 
 # FIZZBUZZ
 # Write a method that prints the numbers from 1 to 100. For multiples of three print Fizz instead of the number, for multiples of five print Buzz instead of the number, for numbers that are multiples of both three and five print FizzBuzz, for all other numbers print the number.
-    buzz = 1..100
-    def fizz_buzz number
-        number.each do |value|
-            if value % 15 == 0
-                'FizzBuzz'
-            elsif value % 5 == 0
-                'Buzz'
-            else 
-                'Fizz'
+    buzz = (1..100).to_a
+        def fizz_buzz number
+            number.map do |value|
+                if value % 15 == 0
+                    value = 'FizzBuzz'
+                    value
+                elsif value % 5 == 0
+                    value ='Buzz'
+                    value
+                elsif value % 3 == 0 
+                    value = 'Fizz'
+                    value
+                else 
+                    value
+                end
             end
         end
-    end
     p fizz_buzz buzz
