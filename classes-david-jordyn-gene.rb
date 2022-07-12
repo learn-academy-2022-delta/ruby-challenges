@@ -101,35 +101,55 @@ class Animal
     end
     def aging
         @age = @age +1
+        if @age == 4
+            status_death()
+        end
+    end
+    def status_death
+        @status_alive = false
     end
 end
 class Fish < Animal
-    def initialize(age, status_alive)
+    def initialize(age, status_alive, species)
         super(age, status_alive)
         @type = "cold blooded"
+        @species = species
     end
     def get_info
-        "My fish is #{age} years old and #{@type}"
+        "My fish is #{age} years old, #{@type}, and of the #{@species} species."
     end
 end
-salmon = Fish.new(0, true)
+salmon = Fish.new(0, true, "Atlantic")
 salmon.aging
 p salmon.get_info
+salmon.aging
+p salmon
+salmon.aging
+salmon.aging
+p salmon
 
-# As a developer, upon initialization, I can give my Animal a status of alive, which will be set to true.
-# As a developer, I can give my Animal an age of 0 upon creation.
-# As a developer, I can age my Animal up one year at a time.
-# As a developer, I can return my Animal's age, as well as if they're alive.
-# Hint: Use attr_accessor as well as an initialize method.
-# As a developer, I can create a Fish that inherits from Animal.
-# As a developer, I can initialize all of my fish to be cold_blooded. (Yes, there is one fish who is technically fully warm-blooded but we aren't going to talk about that.)
-# As a developer, I can create a Salmon that inherits from Fish.
-# As a developer, I can initialize my Salmon to be a specific species (Atlantic, Sockeye, etc).
-# As a developer, I can see that my Salmon is cold-blooded.
-# As a developer, I can age my Salmon up.
-# As a developer, I can see a message that tells me all of my Salmon's information.
-# As a developer, if my Salmon reaches the ripe old age of 4, I can make it die peacefully after a full and happy life.
-# Hint: You will need a method that changes the status of alive in the initialize method of Animal.
+
+# x As a developer, upon initialization, I can give my Animal a status of alive, which will be set to true. 
+# x As a developer, I can give my Animal an age of 0 upon creation.
+# x As a developer, I can age my Animal up one year at a time.
+# x As a developer, I can return my Animal's age, as well as if they're alive.
+# x Hint: Use attr_accessor as well as an initialize method.
+# x As a developer, I can create a Fish that inherits from Animal.
+# x As a developer, I can initialize all of my fish to be cold_blooded. (Yes, there is one fish who is technically fully warm-blooded but we aren't going to talk about that.)
+# x As a developer, I can create a Salmon that inherits from Fish.
+
+# x As a developer, I can initialize my Salmon to be a specific species (Atlantic, Sockeye, etc).
+
+# x As a developer, I can see that my Salmon is cold-blooded.
+
+# x As a developer, I can age my Salmon up.
+# x As a developer, I can see a message that tells me all of my Salmon's information.
+# x As a developer, if my Salmon reaches the ripe old age of 4, I can make it die peacefully after a full and happy life.
+# x Hint: You will need a method that changes the status of alive in the initialize method of Animal.
+
+
+
+
 # As a developer, I can create a Mammal that inherits from Animal.
 # As a developer, I can initialize all of my Mammals to be warm_blooded.
 # As a developer, I can create a Bear that inherits from Mammal.
@@ -140,6 +160,9 @@ p salmon.get_info
 # As a developer, I can create a Mammal of my choice.
 # As a developer, I can interact with the new Mammal via various methods.
 # As a developer, I can see a message that tells me all of my new Mammal's information.
+
+
+
 # STRETCH: As a developer, I can keep a collection of two of each Animal.
 # Hint: You'll want to add your Animals into an array.
 # STRETCH: As a developer, I can sort my collection of Animals based on age.
