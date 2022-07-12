@@ -63,10 +63,16 @@ def rules (id,password)
     if id == password 
         "Invalid, user ID and password cannot be the same"
     elsif id.length <= 6 || password.length <= 6
-            "Needs to be longer than 6 characters"
-    # elsif password.contain("!","#","S")  
-    #     "Need stronger password"
-    end    
+        "Needs to be longer than 6 characters"
+    elsif password == "password"
+        "Cannot be the word password"   
+    elsif true == id.include?('!')||true == id.include?('$')||true == id.include?('#')
+        "Cannot have !,$,# in user ID"
+    elsif true != password.include?('!')||true != password.include?('$')||true != password.include?('#')
+        "Need stronger password"
+    else
+        "Welcome #{id}"
+    end 
 end
 
 p rules(user_name,user_password)
@@ -80,3 +86,5 @@ p rules(user_name,user_password)
 # As a user, I can enter my user ID and password into the terminal after being prompted to find out if the they are acceptable.
 # User Stories: Super Stretch
 # As a developer, my method ensures that the user's password must contain at least one number.
+        
+    
