@@ -93,6 +93,29 @@ p green
 
 # Animal Kingdom
 # As a developer, I can make an Animal (generic Animal class).
+class Animal
+    attr_accessor :age, :status_alive
+    def initialize(age, status_alive)
+        @status_alive = true
+        @age = 0
+    end
+    def aging
+        @age = @age +1
+    end
+end
+class Fish < Animal
+    def initialize(age, status_alive)
+        super(age, status_alive)
+        @type = "cold blooded"
+    end
+    def get_info
+        "My fish is #{age} years old and #{@type}"
+    end
+end
+salmon = Fish.new(0, true)
+salmon.aging
+p salmon.get_info
+
 # As a developer, upon initialization, I can give my Animal a status of alive, which will be set to true.
 # As a developer, I can give my Animal an age of 0 upon creation.
 # As a developer, I can age my Animal up one year at a time.
