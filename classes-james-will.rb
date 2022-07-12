@@ -73,14 +73,48 @@ p green
 
 
 # Animal Kingdom
-# As a developer, I can make an Animal (generic Animal class).
-# As a developer, upon initialization, I can give my Animal a status of alive, which will be set to true.
-# As a developer, I can give my Animal an age of 0 upon creation.
-# As a developer, I can age my Animal up one year at a time.
-# As a developer, I can return my Animal's age, as well as if they're alive.
+# As a developer, I can make an Animal (generic Animal class). ✅
+# As a developer, upon initialization, I can give my Animal a status of alive, which will be set to true.✅
+# As a developer, I can give my Animal an age of 0 upon creation. ✅
+# As a developer, I can age my Animal up one year at a time. ✅
+# As a developer, I can return my Animal's age, as well as if they're alive. ✅
 # Hint: Use attr_accessor as well as an initialize method.
-# As a developer, I can create a Fish that inherits from Animal.
-# As a developer, I can initialize all of my fish to be cold_blooded. (Yes, there is one fish who is technically fully warm-blooded but we aren't going to talk about that.)
+# As a developer, I can create a Fish that inherits from Animal.✅
+# As a developer, I can initialize all of my fish to be cold_blooded. (Yes, there is one fish who is technically fully warm-blooded but we aren't going to talk about that.) ✅
+class Animal
+    def initialize(animal_name_parameter)
+        @animal_name = animal_name_parameter
+        @status = 'alive'
+        @age = 0
+    end
+    def aging
+        @age = @age +1
+    end
+    def alive_or_dead_and_age
+        "This #{@animal_name} is #{@age} years old and is #{@status}."
+    end
+end
+
+panda = Animal.new('panda')
+p panda.aging
+p panda.aging
+p panda.aging
+p panda.aging
+
+p panda
+p panda.aging
+p panda.alive_or_dead_and_age
+
+class Fish < Animal
+    def initialize(animal_name_parameter)
+        super(animal_name_parameter)
+        @blood = 'cold blooded'
+    end
+end
+
+salmon = Fish.new()
+p salmon
+
 # As a developer, I can create a Salmon that inherits from Fish.
 # As a developer, I can initialize my Salmon to be a specific species (Atlantic, Sockeye, etc).
 # As a developer, I can see that my Salmon is cold-blooded.
