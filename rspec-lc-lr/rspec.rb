@@ -7,6 +7,7 @@ class Task
         @completion = completion
      end
 end
+h
 
 # Story: As a developer, I can give a Task a title and retrieve it.
 
